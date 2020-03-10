@@ -1,0 +1,59 @@
+/*
+    Rodrigo dos Santos Felix - 010617040
+*/
+
+use trabalho1
+
+db.usuario.insert({
+    "nome": "Emmy J",
+    "idade": 25,
+    "nacionalidade": "EUA",
+    "idiomas_falados": [{
+        "fluente": ["inglês", "espanhol"],
+        "aprendendo": ["português", "alemão"]
+    }]
+})
+
+db.usuario.insert({
+    "nome": "Maria Mariana Mais M",
+    "idade": 30,
+    "nacionalidade": "Chile",
+    "idiomas_falados": [{
+        "fluente": ["português", "espanhol"],
+        "aprendendo": "chinês"
+    }],
+    "tempo_estudado": 2,
+    "aceita_contato": 1
+})
+
+db.usuario.insert({
+    "primeiro_nome": "José",
+    "segundo_nome": "Silva",
+    "CNPJ": "181518451564/51518",
+    "nome_fantasia": "Isso e aquilo",
+    "cidades_filiais": ["Bauru", "São Carlos"]
+})
+
+db.usuario.insert({
+    "user": "hbhbe@kkmnkn.com",
+    "passwd": "*******",
+    "preferencias": [{
+        "cor": "cinza",
+        "marca": "gol",
+        "ano": 2010
+    }],
+    "credenciado": 1
+})
+
+db.usuario.insert({
+    "user": "5185klhfgbh@kkmnkn.com",
+    "passwd": "*******",
+    "preferencias": [{
+        "cor": "preto",
+        "marca": "fiat",
+        "ano": 2019
+    }],
+    "credenciado": 0,
+    "nascimento": "10/02/1980"
+})
+db.usuario.find().pretty()

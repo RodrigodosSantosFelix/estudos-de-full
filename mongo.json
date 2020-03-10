@@ -1,0 +1,34 @@
+use aula01 //Cria novo banco de dados e utilizar
+
+//Criar pessoa e incluir dados
+db.pessoa.insert({
+    "nome": "João Alonso da Silva",
+    "telefone": "18518545151"
+}) 
+
+db.pessoa.insert({
+    "nome": "Josevaldo",
+    "apelido": "Jô",
+    "idade": 29,
+    "cor_preferida": ["azul", "preto"]
+})
+
+db.pessoa.insert({
+    "nome": "Maria",
+    "status": "morta",
+    "viagens": [{
+            "pais": "Italia",
+            "cidades": [
+                "Roma",
+                "Veneza"
+            ]
+        },
+        {
+            "pais": "China",
+            "cidades": "Pequim",
+            "status": "veio a óbito"
+        }
+    ]
+})
+
+db.pessoa.find().pretty()

@@ -32,3 +32,32 @@ db.pessoa.insert({
 })
 
 db.pessoa.find().pretty()
+
+//procurar dados exatos
+db.pessoa.find({ "nome": "João" })
+
+//procurar dados que comecem com Jo
+db.pessoa.find({ "nome": /^Jo/ }).pretty()
+
+//procurar dados que termina com ia
+db.pessoa.find({ "nome": /a$/ }).pretty()
+
+//procurar dados que contem a
+db.pessoa.find({ "nome": /a/ }).pretty()
+
+//procurar com AND
+db.pessoa.find({ "nome": "Maria", "status": "morta" }).pretty()
+
+//procurar e retornao indice status
+db.pessoa.find({ "nome": "Maria"},{ "status":"text" }).pretty()
+
+//procurar com OR
+db.pessoa.find({$or: [
+    { 
+        "nome": "Maria" 
+    }, 
+    { 
+        "idade": 29 
+    }
+]
+}).pretty()

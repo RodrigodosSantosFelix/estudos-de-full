@@ -56,4 +56,36 @@ db.usuario.insert({
     "credenciado": 0,
     "nascimento": "10/02/1980"
 })
+
+//////////////
+
 db.usuario.find().pretty()
+
+//procurar dados exatos
+db.usuario.find({ "primeiro_nome": "José" }).pretty()
+
+//procurar dados que comecem com Jo
+db.usuario.find({ "nome": /^Em/ }).pretty()
+
+//procurar dados que termina com ia
+db.usuario.find({ "user": /n.com$/ }).pretty()
+
+//procurar dados que contem a
+db.usuario.find({ "nome": /ia/ }).pretty()
+
+//procurar com AND
+db.usuario.find({ "credenciado": 0, "user": "5185klhfgbh@kkmnkn.com" }).pretty()
+
+//procurar e retornao indice status
+db.usuario.find({ "nome": "Maria Mariana Mais M" },{ "idade": "gbf" }).pretty()
+
+//procurar com OR
+db.usuario.find({$or: [
+    { 
+        "nome": "Maria Mariana Mais M" 
+    }, 
+    { 
+        "idade": 30 
+    }
+]
+}).pretty()
